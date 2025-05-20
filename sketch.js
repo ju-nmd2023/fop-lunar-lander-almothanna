@@ -1,8 +1,8 @@
-
 let state = "start";
 let groundY = 550;
 let lander;
 let gravity = 0.1;
+let resultText = "";
 
 function setup() {
   createCanvas(600, 600);
@@ -43,20 +43,28 @@ function drawMoon() {
   ellipse(500, groundY + 25, 35, 12);
 }
 
-let resultText = "";
-
 function keyPressed() {
   if (state === "start" || state === "result") {
     lander = new Lander();
     state = "play";
+  } else if (state === "play") {
+    if (key === ' ' || keyCode === DOWN_ARROW) {
+      lander.thrusting = true;
+    }
   }
+}
+
+function keyReleased() {
   if (state === "play") {
-    lander.applyThrust();
+    if (key === ' ' || keyCode === DOWN_ARROW) {
+      lander.thrusting = false;
+    }
   }
 }
 
 function checkLanding() {
   if (lander.y + lander.size / 2 >= groundY) {
+    lander.y = groundY - lander.size / 2; // This to stops it on the ground
     if (lander.vel < 2) {
       resultText = "You landed safely! Yay!!";
     } else {
@@ -65,6 +73,3 @@ function checkLanding() {
     state = "result";
   }
 }
-
-
-
