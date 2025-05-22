@@ -23,7 +23,7 @@ class Lander {
       
       textSize(14);
       fill(255);
-      text("Speed: " + this.vel.toFixed(2), 10, 20);   // Show speed – ChatGPT suggested for debugging, after my old code didnt do the job.
+      text("Speed: " + this.vel.toFixed(2), 10, 20);   // Show speed 
   
      
       if (this.thrusting) {   // Draw flame effect when thrusting – Inspired by p5.js triangle() 

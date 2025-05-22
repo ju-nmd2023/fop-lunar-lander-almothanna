@@ -57,7 +57,7 @@ function keyPressed() {
 function keyReleased() {
   if (state === "play") {
     if (key === ' ' || keyCode === DOWN_ARROW) {
-      lander.thrusting = false;   // Stop thrust – was Chatgpt suggestion using keyReleased for better and smoother controls
+      lander.thrusting = false;   // Stop thrust 
     }
   }
 }
