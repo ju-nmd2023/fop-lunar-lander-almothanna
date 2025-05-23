@@ -5,7 +5,7 @@ class Lander {
       this.vel = 0;
       this.size = 40;
       this.thrusting = false; 
-    } // ChatGPT helped define constructor defaults clearly
+    } // ChatGPT helped define constructor defaults clearly - https://chatgpt.com/share/682fc581-89b4-800e-93a6-ab203e12f1b0
   
     update() {
       if (this.thrusting) {
